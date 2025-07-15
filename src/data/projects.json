@@ -9,34 +9,11 @@
     "live": "",
     "featured": true,
     "year": 2025,
-    "category": "robotics"
+    "category": "robotics",
+    "blog": "https://bilbots.pages.dev/"
   },
-  {
-    "id": "bilbots-website",
-    "title": "BilBots  Website",
-    "description": "Team website for our robotics team. Built with Astro and modern web standards.",
-    "shortDescription": "Team website for robotics club",
-    "tech": ["Astro", "JavaScript", "CSS3", "Responsive Design"],
-    "image": "/images/projects/bilbots.jpg",
-    "github": "https://github.com/smartlizardpy/bilbots",
-    "live": "https://bilbots.pages.dev",
-    "featured": true,
-    "year": 2025,
-    "category": "web"
-  },
-  {
-  "id": "giggle",
-  "title": "Giggle Search Engine",
-  "description": "A Google-style search engine built using the Langsearch API. Features include full summary rendering, query context support, and visual easter eggs in the output area instead of boring popups. Clean UI powered by Vue and Tailwind, deployed on Netlify.",
-  "shortDescription": "Google-style search engine with Langsearch API and easter eggs",
-  "tech": ["Vue.js", "Langsearch API", "TailwindCSS", "Netlify"],
-  "image": "/images/projects/giggle.png",
-  "github": "https://github.com/smartlizardpy/Giggle",
-  "live": "https://giggl-search.netlify.app",
-  "featured": true,
-  "year": 2025,
-  "category": "web"
-},
+  
+
 {
   "id": "konser",
   "title": "Concert Website v1",
@@ -48,6 +25,7 @@
   "featured": false,
   "year": 2024,
   "category": "Archive",
+  "blog": "/blog/concertv1",
   "tech": ["failure", "archive", "experimental"]
 },
 {
@@ -60,9 +38,37 @@
   "github": "https://github.com/smartlizardpy/konser-v2",
   "live": "https://konser.pages.dev",
   "featured": true,
+  "blog": "/blog/concertv2",
   "year": 2025,
   "category": "web",
   "tags": ["graphics", "livestream", "vue", "obs", "nodecg"]
+
+},
+{
+    "id": "bilbots-website",
+    "title": "BilBots  Website",
+    "description": "Team website for our robotics team. Built with Astro and modern web standards.",
+    "shortDescription": "Team website for robotics club",
+    "tech": ["Astro", "JavaScript", "CSS3", "Responsive Design"],
+    "image": "/images/projects/bilbots.jpg",
+    "github": "https://github.com/smartlizardpy/bilbots",
+    "live": "https://bilbots.pages.dev",
+    "featured": true,
+    "year": 2025,
+    "category": "web"
+  },
+{
+  "id": "giggle",
+  "title": "Giggle Search Engine",
+  "description": "A Google-style search engine built using the Langsearch API. Features include full summary rendering, query context support, and visual easter eggs in the output area instead of boring popups. Clean UI powered by Vue and Tailwind, deployed on Netlify.",
+  "shortDescription": "Google-style search engine with Langsearch API and easter eggs",
+  "tech": ["Vue.js", "Langsearch API", "TailwindCSS", "Netlify"],
+  "image": "/images/projects/giggle.png",
+  "github": "https://github.com/smartlizardpy/Giggle",
+  "live": "https://giggl-search.netlify.app",
+  "featured": true,
+  "year": 2025,
+  "category": "web"
 }
 
 

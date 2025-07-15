@@ -1,0 +1,72 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Header from "../../components/Header.astro";
+import "../../styles/global.css";
+import { getEntryBySlug, getCollection } from "astro:content";
+
+const { slug } = Astro.params;
+const post = await getEntryBySlug("blog", slug);
+if (!post) throw new Error("Post not found");
+
+const { Content } = await post.render(); // ✅ This is the key fix
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog");
+  return posts.map((post) => ({ params: { slug: post.slug } }));
+}
+---
+
+<BaseLayout title={post.data.title} description={post.data.description}>
+  <Header />
+  <section
+    class="pt-32 pb-20 bg-gradient-to-br from-slate-50 via-green-50 to-blue-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900"
+  >
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-8">
+        <a
+          href="/blog"
+          class="inline-flex items-center text-blue-600 dark:text-blue-400 hover:underline font-semibold mb-4"
+        >
+          <svg
+            class="w-5 h-5 mr-2"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M15 19l-7-7 7-7"></path>
+          </svg>
+          Back to Blog
+        </a>
+        <h1
+          class="text-4xl md:text-5xl font-extrabold text-slate-900 dark:text-white mb-2 tracking-tight"
+        >
+          {post.data.title}
+        </h1>
+        <blockquote class="border-l-4 border-blue-400 pl-4 py-2 mb-4 bg-blue-50 dark:bg-slate-800 text-lg italic text-blue-900 dark:text-blue-200 font-medium">
+          {post.data.description}
+        </blockquote>
+        <div
+          class="flex flex-wrap gap-3 items-center text-sm text-slate-500 dark:text-slate-400 mb-4"
+        >
+          <span>{new Date(post.data.date).toLocaleDateString()}</span>
+          {post.data.readTime && <span>• {post.data.readTime}</span>}
+          {
+            (post.data.tags || []).map((tag) => (
+              <span class="px-2 py-1 bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300 rounded-full font-medium">
+                {tag}
+              </span>
+            ))
+          }
+        </div>
+     
+      <article class="md-content max-w-none">
+        <Content />
+      </article>
+
+    </div>
+  </section>
+</BaseLayout>
