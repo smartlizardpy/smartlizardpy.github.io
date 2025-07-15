@@ -1,0 +1,181 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import "../styles/global.css";
+---
+
+<BaseLayout
+  title="404 - Page Not Found"
+  description="Oops! This page doesn't exist."
+>
+  <Header />
+
+  <section
+    class="pt-32 pb-20 min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-50 via-red-50 to-orange-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900"
+  >
+    <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <!-- 404 Number -->
+      <div class="mb-8">
+        <h1 class="text-8xl md:text-9xl font-bold gradient-text">404</h1>
+      </div>
+
+      <!-- Message -->
+      <div class="mb-8">
+        <h2
+          class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4"
+        >
+          You broke it, congrats 👏
+        </h2>
+        <p class="text-xl text-slate-600 dark:text-slate-300 mb-6">
+          Looks like this page decided to take a vacation. Maybe it's exploring
+          the digital wilderness?
+        </p>
+      </div>
+
+      <!-- Fun Stats -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+        <div
+          class="bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm rounded-xl p-6 border border-slate-200/50 dark:border-slate-700/50"
+        >
+          <div class="text-2xl font-bold text-slate-900 dark:text-white mb-2">
+            404
+          </div>
+          <div class="text-sm text-slate-600 dark:text-slate-400">
+            Error Code
+          </div>
+        </div>
+        <div
+          class="bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm rounded-xl p-6 border border-slate-200/50 dark:border-slate-700/50"
+        >
+          <div class="text-2xl font-bold text-slate-900 dark:text-white mb-2">
+            ∞
+          </div>
+          <div class="text-sm text-slate-600 dark:text-slate-400">
+            Possibilities
+          </div>
+        </div>
+        <div
+          class="bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm rounded-xl p-6 border border-slate-200/50 dark:border-slate-700/50"
+        >
+          <div class="text-2xl font-bold text-slate-900 dark:text-white mb-2">
+            13
+          </div>
+          <div class="text-sm text-slate-600 dark:text-slate-400">My Age</div>
+        </div>
+      </div>
+
+      <!-- Navigation -->
+      <div class="space-y-4">
+        <p class="text-slate-600 dark:text-slate-300">
+          Here are some pages that actually exist:
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href="/"
+            class="inline-flex items-center justify-center px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors duration-200"
+          >
+            <svg
+              class="w-4 h-4 mr-2"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
+              ></path>
+            </svg>
+            Go Home
+          </a>
+          <a
+            href="/projects"
+            class="inline-flex items-center justify-center px-6 py-3 bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-slate-700 dark:text-slate-300 font-medium rounded-lg transition-colors duration-200"
+          >
+            <svg
+              class="w-4 h-4 mr-2"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
+              ></path>
+            </svg>
+            View Projects
+          </a>
+          <a
+            href="/blog"
+            class="inline-flex items-center justify-center px-6 py-3 bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-slate-700 dark:text-slate-300 font-medium rounded-lg transition-colors duration-200"
+          >
+            <svg
+              class="w-4 h-4 mr-2"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+              ></path>
+            </svg>
+            Read Blog
+          </a>
+        </div>
+      </div>
+
+      <!-- Fun Message -->
+      <div
+        class="mt-12 p-6 bg-white/50 dark:bg-slate-800/50 backdrop-blur-sm rounded-2xl border border-slate-200/50 dark:border-slate-700/50"
+      >
+        <p class="text-slate-600 dark:text-slate-300 text-sm">
+          <strong>Fun fact:</strong> This 404 page took me longer to design than
+          some of my actual projects. Priorities, right? 😅
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  // Add some fun animation to the 404 page
+  window.addEventListener("load", () => {
+    if (typeof (window as any).gsap !== "undefined") {
+      const gsap = (window as any).gsap;
+
+      // Animate the 404 number
+      gsap.from("h1", {
+        duration: 1,
+        scale: 0,
+        rotation: 360,
+        ease: "back.out(1.7)",
+      });
+
+      // Animate the message
+      gsap.from("h2", {
+        duration: 0.8,
+        y: 30,
+        opacity: 0,
+        delay: 0.3,
+        ease: "power3.out",
+      });
+
+      // Animate the stats
+      gsap.from(".grid > div", {
+        duration: 0.6,
+        y: 20,
+        opacity: 0,
+        stagger: 0.1,
+        delay: 0.6,
+        ease: "power3.out",
+      });
+    }
+  });
+</script>
+

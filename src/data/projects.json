@@ -1,0 +1,71 @@
+[
+  {
+    "id": "vex-iq-robotics",
+    "title": "VEX IQ Robotics",
+    "description": "Hardware + autonomous software for competitive robotics. Built custom autonomous routines and mechanical systems for VEX IQ competitions.",
+    "shortDescription": "Competitive robotics with custom autonomous software",
+    "tech": ["Python", "VEX IQ", "Autonomous Programming", "Mechanical Design"],
+    "image": "/images/projects/vexiq.jpeg",
+    "live": "",
+    "featured": true,
+    "year": 2025,
+    "category": "robotics"
+  },
+  {
+    "id": "bilbots-website",
+    "title": "BilBots  Website",
+    "description": "Team website for our robotics team. Built with Astro and modern web standards.",
+    "shortDescription": "Team website for robotics club",
+    "tech": ["Astro", "JavaScript", "CSS3", "Responsive Design"],
+    "image": "/images/projects/bilbots.jpg",
+    "github": "https://github.com/smartlizardpy/bilbots",
+    "live": "https://bilbots.pages.dev",
+    "featured": true,
+    "year": 2025,
+    "category": "web"
+  },
+  {
+  "id": "giggle",
+  "title": "Giggle Search Engine",
+  "description": "A Google-style search engine built using the Langsearch API. Features include full summary rendering, query context support, and visual easter eggs in the output area instead of boring popups. Clean UI powered by Vue and Tailwind, deployed on Netlify.",
+  "shortDescription": "Google-style search engine with Langsearch API and easter eggs",
+  "tech": ["Vue.js", "Langsearch API", "TailwindCSS", "Netlify"],
+  "image": "/images/projects/giggle.png",
+  "github": "https://github.com/smartlizardpy/Giggle",
+  "live": "https://giggl-search.netlify.app",
+  "featured": true,
+  "year": 2025,
+  "category": "web"
+},
+{
+  "id": "konser",
+  "title": "Concert Website v1",
+  "description": "A glitch-themed concert microsite built as an early experiment. Includes animated text, Google Maps embed, and a ticket button. Cool idea, but never fully polished or used in a real event.",
+  "shortDescription": "Experimental glitchy concert site (archived)",
+  "image": "/images/projects/konser1.jpg",
+  "github": "https://github.com/smartlizardpy/konser",
+  "live": "https://smartlizardpy.github.io/konser",
+  "featured": false,
+  "year": 2024,
+  "category": "Archive",
+  "tech": ["failure", "archive", "experimental"]
+},
+{
+  "id": "concert-website-2",
+  "title": "Concert Website 2.0 + Graphics System",
+  "description": "The second version of my concert website, built for a local piano & violin concert organized by my neighbor. It displays performers and their songs, and includes a fully embedded livestream. I also created a live graphics system for OBS, starting with a custom Flask + WebSocket overlay and later upgrading to a full NodeCG setup with JSON integration. Over 80 people watched the stream live.",
+  "shortDescription": "Livestream concert site with custom graphics system",
+  "tech": ["Vue.js", "TailwindCSS", "Cloudflare Pages", "Flask", "WebSocket", "NodeCG", "OBS"],
+  "image": "/images/projects/konser2.jpg",
+  "github": "https://github.com/smartlizardpy/konser-v2",
+  "live": "https://konser.pages.dev",
+  "featured": true,
+  "year": 2025,
+  "category": "web",
+  "tags": ["graphics", "livestream", "vue", "obs", "nodecg"]
+}
+
+
+
+
+] 

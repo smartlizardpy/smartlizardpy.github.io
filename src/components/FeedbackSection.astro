@@ -1,0 +1,91 @@
+---
+const feedbacks = [
+  { name: 'Ozan', message: 'Remzi is the most creative person I know. He always surprises me with his ideas.' },
+  { name: 'Ayşe', message: 'He’s a true problem solver and a great friend. Always there when you need him.' },
+  { name: 'Mert', message: 'His passion for tech and art is contagious. Inspires everyone around him!' },
+  { name: 'Elif', message: 'Remzi brings energy and fun to every project. A joy to work with.' },
+];
+let current = 0;
+---
+<section class="feedback-section">
+  <h2>What My Friends Say</h2>
+  <div class="carousel">
+    <button class="arrow left" id="prev-feedback">&#8592;</button>
+    <div class="feedback-card">
+      <p class="message">{feedbacks[current].message}</p>
+      <span class="name">— {feedbacks[current].name}</span>
+    </div>
+    <button class="arrow right" id="next-feedback">&#8594;</button>
+  </div>
+</section>
+<script type="module">
+  let current = 0;
+  const feedbacks = [
+    { name: 'Ozan', message: 'Remzi is the most creative person I know. He always surprises me with his ideas.' },
+    { name: 'Ayşe', message: 'He’s a true problem solver and a great friend. Always there when you need him.' },
+    { name: 'Mert', message: 'His passion for tech and art is contagious. Inspires everyone around him!' },
+    { name: 'Elif', message: 'Remzi brings energy and fun to every project. A joy to work with.' },
+  ];
+  const card = document.querySelector('.feedback-card');
+  const name = card.querySelector('.name');
+  const message = card.querySelector('.message');
+  document.getElementById('prev-feedback').onclick = () => {
+    current = (current - 1 + feedbacks.length) % feedbacks.length;
+    message.textContent = feedbacks[current].message;
+    name.textContent = '— ' + feedbacks[current].name;
+  };
+  document.getElementById('next-feedback').onclick = () => {
+    current = (current + 1) % feedbacks.length;
+    message.textContent = feedbacks[current].message;
+    name.textContent = '— ' + feedbacks[current].name;
+  };
+</script>
+<style>
+.feedback-section {
+  background: linear-gradient(90deg, #e0e7ff 0%, #f0fdfa 100%);
+  padding: 4rem 0 2rem 0;
+  text-align: center;
+}
+.feedback-section h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+.carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+.feedback-card {
+  background: white;
+  border-radius: 1.5rem;
+  box-shadow: 0 2px 24px rgba(0,0,0,0.08);
+  padding: 2rem 2.5rem;
+  min-width: 320px;
+  max-width: 400px;
+  transition: box-shadow 0.2s;
+}
+.feedback-card .message {
+  font-size: 1.15rem;
+  color: #334155;
+  margin-bottom: 1rem;
+}
+.feedback-card .name {
+  font-weight: bold;
+  color: #6366f1;
+}
+.arrow {
+  background: #6366f1;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.arrow:hover {
+  background: #4f46e5;
+}
+</style> 

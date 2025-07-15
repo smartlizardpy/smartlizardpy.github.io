@@ -1,0 +1,396 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import "../styles/global.css";
+const drummingStats = [
+  { label: "Years Playing", value: "7" },
+  { label: "Favorite Genre", value: "Metal" },
+  { label: "Bands I Love", value: "SOAD Hanabie Rammstein" },
+  { label: "Practice Hours", value: "1000+" },
+];
+
+const drumKit = [
+  { key: "A", sound: "kick", label: "Kick" },
+  { key: "S", sound: "snare", label: "Snare" },
+  { key: "D", sound: "hihat", label: "Hi-Hat" },
+  { key: "F", sound: "crash", label: "Crash" },
+  { key: "G", sound: "tom1", label: "Tom 1" },
+  { key: "H", sound: "tom2", label: "Tom 2" },
+  { key: "J", sound: "ride", label: "Ride" },
+  { key: "K", sound: "floor", label: "Floor Tom" },
+];
+---
+
+<BaseLayout
+  title="Drumming - Ozan"
+  description="Playing drums since age 6. Metal is my passion. Check out my drumming journey and interactive drum kit."
+>
+  <Header />
+
+  <!-- Hero Section -->
+  <section
+    class="pt-32 pb-20 bg-gradient-to-br from-slate-50 via-red-50 to-orange-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900"
+  >
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center">
+        <div
+          class="inline-flex items-center px-4 py-2 rounded-full bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm border border-slate-200/50 dark:border-slate-700/50 mb-8"
+        >
+          <span class="text-sm font-medium text-slate-700 dark:text-slate-300"
+            >🥁 Since Age 6</span
+          >
+        </div>
+
+        <h1
+          class="text-5xl md:text-6xl font-bold text-slate-900 dark:text-white mb-6"
+        >
+          Drumming
+        </h1>
+        <p
+          class="text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto leading-relaxed"
+        >
+          Metal is my passion. I've been playing drums since I was 6 years old,
+          and there's nothing like the energy of a heavy beat.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="py-20 bg-white dark:bg-slate-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+        {
+          drummingStats.map((stat) => (
+            <div class="text-center">
+              <div class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-2">
+                {stat.value}
+              </div>
+              <div class="text-slate-600 dark:text-slate-300 text-sm md:text-base">
+                {stat.label}
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Drum Kit -->
+  <section class="py-20 bg-slate-50 dark:bg-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-slate-900 dark:text-white mb-4">
+          Interactive Drum Kit
+        </h2>
+        <p class="text-xl text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
+          Press the keys on your keyboard to play! A, S, D, F, G, H, J, K
+        </p>
+      </div>
+
+      <div class="max-w-4xl mx-auto">
+        <!-- Drum Kit Visual -->
+        <div
+          class="relative bg-gradient-to-b from-slate-200 to-slate-300 dark:from-slate-700 dark:to-slate-800 rounded-3xl p-8 mb-8"
+        >
+          <div class="grid grid-cols-4 gap-4">
+            {
+              drumKit.map((drum) => (
+                <div
+                  class="drum-pad group cursor-pointer bg-white dark:bg-slate-600 rounded-2xl p-6 text-center shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-105"
+                  data-key={drum.key}
+                  data-sound={drum.sound}
+                >
+                  <div class="w-12 h-12 bg-red-100 dark:bg-red-900/30 rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform duration-200">
+                    <span class="text-2xl">🥁</span>
+                  </div>
+                  <div class="text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">
+                    {drum.label}
+                  </div>
+                  <div class="text-xs text-slate-500 dark:text-slate-400 font-mono">
+                    {drum.key}
+                  </div>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+
+        <!-- Instructions -->
+        <div class="bg-white dark:bg-slate-700 rounded-2xl p-6 shadow-lg">
+          <h3 class="text-lg font-semibold text-slate-900 dark:text-white mb-3">
+            How to Play
+          </h3>
+          <div
+            class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-slate-600 dark:text-slate-300"
+          >
+            <div>
+              <strong>Keyboard Controls:</strong>
+              <ul class="mt-2 space-y-1">
+                <li>A - Kick Drum</li>
+                <li>S - Snare Drum</li>
+                <li>D - Hi-Hat</li>
+                <li>F - Crash Cymbal</li>
+              </ul>
+            </div>
+            <div>
+              <strong>Mouse/Touch:</strong>
+              <ul class="mt-2 space-y-1">
+                <li>Click any drum pad</li>
+                <li>Visual feedback on hit</li>
+                <li>Responsive animations</li>
+                <li>Mobile-friendly</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Music Section -->
+  <section class="py-20 bg-white dark:bg-slate-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-slate-900 dark:text-white mb-4">
+          My Favorite Metal
+        </h2>
+        <p class="text-xl text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
+          These bands inspire my drumming style and keep me motivated to
+          practice.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <!-- Sepultura -->
+        <div class="bg-slate-50 dark:bg-slate-800 rounded-2xl p-8 text-center">
+          <div
+            class="w-16 h-16 bg-green-100 dark:bg-green-900/30 rounded-2xl flex items-center justify-center mx-auto mb-6"
+          >
+            <span class="text-2xl">🌱</span>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">
+            Sepultura
+          </h3>
+          <p class="text-slate-600 dark:text-slate-300 mb-4">
+            Sepultura's energy and groove helped me become more aggressive and creative on drums.
+          </p>
+          <div class="text-sm text-slate-500 dark:text-slate-400">
+            Favorite: "Bloody Roots"
+          </div>
+        </div>
+
+        <!-- Rammstein -->
+        <div class="bg-slate-50 dark:bg-slate-800 rounded-2xl p-8 text-center">
+          <div
+            class="w-16 h-16 bg-red-100 dark:bg-red-900/30 rounded-2xl flex items-center justify-center mx-auto mb-6"
+          >
+            <span class="text-2xl">🔥</span>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">
+            Rammstein
+          </h3>
+          <p class="text-slate-600 dark:text-slate-300 mb-4">
+            Rammstein's industrial sound and Christoph Schneider's powerful drumming inspire me.
+          </p>
+          <div class="text-sm text-slate-500 dark:text-slate-400">
+            Favorites: "Sonne", "Du Hast", "Amerika", "Deutschland"
+          </div>
+        </div>
+
+        <!-- Hanabie -->
+        <div class="bg-slate-50 dark:bg-slate-800 rounded-2xl p-8 text-center">
+          <div
+            class="w-16 h-16 bg-pink-100 dark:bg-pink-900/30 rounded-2xl flex items-center justify-center mx-auto mb-6"
+          >
+            <span class="text-2xl">🌸</span>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">
+            Hanabie
+          </h3>
+          <p class="text-slate-600 dark:text-slate-300 mb-4">
+            Hanabie's modern metalcore style shows my love for variety in drumming.
+          </p>
+          <div class="text-sm text-slate-500 dark:text-slate-400">
+            Favorite: "Spicy Queen"
+          </div>
+        </div>
+
+        <!-- SOAD -->
+        <div class="bg-slate-50 dark:bg-slate-800 rounded-2xl p-8 text-center">
+          <div
+            class="w-16 h-16 bg-yellow-100 dark:bg-yellow-900/30 rounded-2xl flex items-center justify-center mx-auto mb-6"
+          >
+            <span class="text-2xl">🎭</span>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">
+            SOAD
+          </h3>
+          <p class="text-slate-600 dark:text-slate-300 mb-4">
+            SOAD's progressive sound inspires my creativity and love for unique rhythms.
+          </p>
+          <div class="text-sm text-slate-500 dark:text-slate-400">
+            Favorites: "Aerials", "Toxicity", "Hypnotize"
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Practice Routine -->
+  <section class="py-20 bg-slate-50 dark:bg-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-slate-900 dark:text-white mb-4">
+          My Practice Routine
+        </h2>
+        <p class="text-xl text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
+          Consistency is key. Here's how I structure my practice sessions.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="bg-white dark:bg-slate-700 rounded-2xl p-6 text-center">
+          <div class="text-3xl mb-4">🎯</div>
+          <h3 class="text-lg font-semibold text-slate-900 dark:text-white mb-2">
+            Warm-up
+          </h3>
+          <p class="text-sm text-slate-600 dark:text-slate-300">
+            15 minutes of basic rudiments
+          </p>
+        </div>
+
+        <div class="bg-white dark:bg-slate-700 rounded-2xl p-6 text-center">
+          <div class="text-3xl mb-4">📖</div>
+          <h3 class="text-lg font-semibold text-slate-900 dark:text-white mb-2">
+            Technique
+          </h3>
+          <p class="text-sm text-slate-600 dark:text-slate-300">
+            30 minutes working on new skills
+          </p>
+        </div>
+
+        <div class="bg-white dark:bg-slate-700 rounded-2xl p-6 text-center">
+          <div class="text-3xl mb-4">🎵</div>
+          <h3 class="text-lg font-semibold text-slate-900 dark:text-white mb-2">
+            Songs
+          </h3>
+          <p class="text-sm text-slate-600 dark:text-slate-300">
+            45 minutes playing along to tracks
+          </p>
+        </div>
+
+        <div class="bg-white dark:bg-slate-700 rounded-2xl p-6 text-center">
+          <div class="text-3xl mb-4">🎸</div>
+          <h3 class="text-lg font-semibold text-slate-900 dark:text-white mb-2">
+            Jamming
+          </h3>
+          <p class="text-sm text-slate-600 dark:text-slate-300">
+            30 minutes of free play
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Footer -->
+  <!-- Footer -->
+  <footer class="bg-slate-900 dark:bg-black text-white py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center">
+        <div class="flex items-center justify-center space-x-2 mb-4">
+          <div
+            class="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center text-white font-bold text-lg"
+          >
+            O
+          </div>
+          <span class="text-xl font-bold">Ozan</span>
+        </div>
+        <p class="text-slate-400 mb-6">
+          Building awesome things, one line of code at a time.
+        </p>
+        <div class="flex justify-center space-x-6">
+          <a
+            href="/projects"
+            class="text-slate-400 hover:text-white transition-colors duration-200"
+            >Projects</a
+          >
+          <a
+            href="/photography"
+            class="text-slate-400 hover:text-white transition-colors duration-200"
+            >Photography</a
+          >
+          <a
+            href="/drumming"
+            class="text-slate-400 hover:text-white transition-colors duration-200"
+            >Drumming</a
+          >
+          <a
+            href="/blog"
+            class="text-slate-400 hover:text-white transition-colors duration-200"
+            >Blog</a
+          >
+        </div>
+      </div>
+    </div>
+  </footer>
+</BaseLayout>
+
+<script>
+  // Drum kit functionality
+  const drumPads = document.querySelectorAll(".drum-pad");
+
+  // Visual feedback function
+  function triggerDrumPad(drumPad: Element) {
+    // Add visual feedback
+    drumPad.classList.add("scale-95", "bg-red-50", "dark:bg-red-900/50");
+
+    // Remove feedback after animation
+    setTimeout(() => {
+      drumPad.classList.remove("scale-95", "bg-red-50", "dark:bg-red-900/50");
+    }, 150);
+
+    // TODO: Add actual sound effects here
+    console.log(`Playing ${drumPad.getAttribute("data-sound")} sound`);
+  }
+
+  // Keyboard event listener
+  document.addEventListener("keydown", (e) => {
+    const key = e.key.toUpperCase();
+    const drumPad = document.querySelector(`[data-key="${key}"]`);
+
+    if (drumPad) {
+      e.preventDefault();
+      triggerDrumPad(drumPad);
+    }
+  });
+
+  // Click event listeners
+  drumPads.forEach((pad) => {
+    pad.addEventListener("click", () => {
+      triggerDrumPad(pad);
+    });
+
+    // Touch events for mobile
+    pad.addEventListener("touchstart", (e) => {
+      e.preventDefault();
+      triggerDrumPad(pad);
+    });
+  });
+
+  // Animate drum kit on load
+  window.addEventListener("load", () => {
+    if (typeof (window as any).gsap !== "undefined") {
+      const gsap = (window as any).gsap;
+
+      gsap.from(".drum-pad", {
+        duration: 0.6,
+        y: 30,
+        opacity: 0,
+        stagger: 0.1,
+        ease: "power3.out",
+        delay: 0.2,
+      });
+    }
+  });
+</script>
+

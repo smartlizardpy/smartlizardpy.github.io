@@ -1,0 +1,306 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import projects from "../data/projects.json";
+import "../styles/global.css";
+// Get unique categories
+const categories = [...new Set(projects.map((p) => p.category))];
+---
+
+<BaseLayout
+  title="Projects - Ozan"
+  description="Check out my latest projects in web development, robotics, and more."
+>
+  <Header />
+
+  <!-- Hero Section -->
+  <section
+    class="pt-32 pb-20 bg-gradient-to-br from-slate-50 via-blue-50 to-purple-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900"
+  >
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col items-center text-center mb-6">
+       <h1
+          class="text-5xl md:text-6xl font-bold text-slate-900 dark:text-white mb-6"
+        >
+          My Projects
+        </h1>
+        <p
+          class="text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto leading-relaxed"
+        >
+          Here's everything I've built so far. From robotics competitions to web
+          applications, each project taught me something new and exciting.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section class="py-20 bg-white dark:bg-slate-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Filters -->
+      <div class="mb-12">
+        <div
+          class="flex flex-col sm:flex-row gap-4 items-center justify-between"
+        >
+          <!-- Search -->
+          <div class="relative w-full sm:w-80">
+            <input
+              type="text"
+              id="search-projects"
+              placeholder="Search projects..."
+              class="w-full px-4 py-3 pl-10 bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200"
+            />
+            <svg
+              class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-slate-400"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+            </svg>
+          </div>
+
+          <!-- Category Filter -->
+          <div class="flex flex-wrap gap-2">
+            <button
+              class="category-filter px-4 py-2 rounded-lg bg-blue-600 text-white text-sm font-medium transition-colors duration-200"
+              data-category="all"
+            >
+              All
+            </button>
+            {
+              categories.map((category) => (
+                <button
+                  class="category-filter px-4 py-2 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-sm font-medium hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors duration-200"
+                  data-category={category}
+                >
+                  {category.charAt(0).toUpperCase() + category.slice(1)}
+                </button>
+              ))
+            }
+          </div>
+        </div>
+      </div>
+
+      <!-- Projects Grid -->
+      <div
+        id="projects-grid"
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+      >
+        {
+          projects.map((project) => (
+            <div
+              class="project-card"
+              data-category={project.category}
+              data-title={project.title.toLowerCase()}
+              data-tech={project.tech.join(" ").toLowerCase()}
+            >
+              <ProjectCard project={project} />
+            </div>
+          ))
+        }
+      </div>
+
+      <!-- No Results -->
+      <div id="no-results" class="hidden text-center py-12">
+        <div
+          class="w-24 h-24 mx-auto mb-6 bg-slate-100 dark:bg-slate-800 rounded-full flex items-center justify-center"
+        >
+          <svg
+            class="w-12 h-12 text-slate-400"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M9.172 16.172a4 4 0 015.656 0M9 12h6m-6-4h6m2 5.291A7.962 7.962 0 0112 15c-2.34 0-4.47-.881-6.08-2.33"
+            ></path>
+          </svg>
+        </div>
+        <h3 class="text-xl font-semibold text-slate-900 dark:text-white mb-2">
+          No projects found
+        </h3>
+        <p class="text-slate-600 dark:text-slate-300">
+          Try adjusting your search or filter criteria.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="py-20 bg-slate-50 dark:bg-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
+        <div>
+          <div class="text-4xl font-bold text-slate-900 dark:text-white mb-2">
+            {projects.length}
+          </div>
+          <div class="text-slate-600 dark:text-slate-300">Total Projects</div>
+        </div>
+        <div>
+          <div class="text-4xl font-bold text-slate-900 dark:text-white mb-2">
+            {projects.filter((p) => p.featured).length}
+          </div>
+          <div class="text-slate-600 dark:text-slate-300">Featured</div>
+        </div>
+        <div>
+          <div class="text-4xl font-bold text-slate-900 dark:text-white mb-2">
+            {categories.length}
+          </div>
+          <div class="text-slate-600 dark:text-slate-300">Categories</div>
+        </div>
+        <div>
+          <div class="text-4xl font-bold text-slate-900 dark:text-white mb-2">
+            {new Date().getFullYear() - 2021}
+          </div>
+          <div class="text-slate-600 dark:text-slate-300">Years Building</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Footer -->
+  <!-- Footer -->
+  <footer class="bg-slate-900 dark:bg-black text-white py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center">
+        <div class="flex items-center justify-center space-x-2 mb-4">
+          <div
+            class="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center text-white font-bold text-lg"
+          >
+            O
+          </div>
+          <span class="text-xl font-bold">Ozan</span>
+        </div>
+        <p class="text-slate-400 mb-6">
+          Building awesome things, one line of code at a time.
+        </p>
+        <div class="flex justify-center space-x-6">
+          <a
+            href="/projects"
+            class="text-slate-400 hover:text-white transition-colors duration-200"
+            >Projects</a
+          >
+          <a
+            href="/photography"
+            class="text-slate-400 hover:text-white transition-colors duration-200"
+            >Photography</a
+          >
+          <a
+            href="/drumming"
+            class="text-slate-400 hover:text-white transition-colors duration-200"
+            >Drumming</a
+          >
+          <a
+            href="/blog"
+            class="text-slate-400 hover:text-white transition-colors duration-200"
+            >Blog</a
+          >
+        </div>
+      </div>
+    </div>
+  </footer>
+</BaseLayout>
+
+<script>
+  // Project filtering functionality
+  const searchInput = document.getElementById(
+    "search-projects"
+  ) as HTMLInputElement;
+  const categoryFilters = document.querySelectorAll(".category-filter");
+  const projectCards = document.querySelectorAll(".project-card");
+  const noResults = document.getElementById("no-results");
+  const projectsGrid = document.getElementById("projects-grid");
+
+  let currentCategory = "all";
+  let currentSearch = "";
+
+  function filterProjects() {
+    let visibleCount = 0;
+
+    projectCards.forEach((card) => {
+      const category = card.getAttribute("data-category");
+      const title = card.getAttribute("data-title") || "";
+      const tech = card.getAttribute("data-tech") || "";
+
+      const matchesCategory =
+        currentCategory === "all" || category === currentCategory;
+      const matchesSearch =
+        currentSearch === "" ||
+        title.includes(currentSearch.toLowerCase()) ||
+        tech.includes(currentSearch.toLowerCase());
+
+      if (matchesCategory && matchesSearch) {
+        card.classList.remove("hidden");
+        visibleCount++;
+      } else {
+        card.classList.add("hidden");
+      }
+    });
+
+    // Show/hide no results message
+    if (visibleCount === 0) {
+      noResults?.classList.remove("hidden");
+    } else {
+      noResults?.classList.add("hidden");
+    }
+  }
+
+  // Search functionality
+  searchInput?.addEventListener("input", (e) => {
+    currentSearch = (e.target as HTMLInputElement).value;
+    filterProjects();
+  });
+
+  // Category filter functionality
+  categoryFilters.forEach((filter) => {
+    filter.addEventListener("click", () => {
+      // Update active state
+      categoryFilters.forEach((f) => {
+        f.classList.remove("bg-blue-600", "text-white");
+        f.classList.add(
+          "bg-slate-100",
+          "dark:bg-slate-800",
+          "text-slate-700",
+          "dark:text-slate-300"
+        );
+      });
+
+      filter.classList.remove(
+        "bg-slate-100",
+        "dark:bg-slate-800",
+        "text-slate-700",
+        "dark:text-slate-300"
+      );
+      filter.classList.add("bg-blue-600", "text-white");
+
+      // Update current category
+      currentCategory = filter.getAttribute("data-category") || "all";
+      filterProjects();
+    });
+  });
+
+  // Animate project cards on load
+  window.addEventListener("load", () => {
+    if (typeof (window as any).gsap !== "undefined") {
+      const gsap = (window as any).gsap;
+
+      gsap.from(".project-card", {
+        duration: 0.8,
+        y: 50,
+        opacity: 0,
+        stagger: 0.1,
+        ease: "power3.out",
+        delay: 0.2,
+      });
+    }
+  });
+</script>
+

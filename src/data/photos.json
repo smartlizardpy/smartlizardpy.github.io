@@ -1,0 +1,101 @@
+[
+  {
+    "id": 1,
+    "title": "The Mysterious Tortoiseshell",
+    "description": "A dimly lit scene featuring a tortoiseshell cat near a concrete ledge, with another cat partially visible in the shadows near a wall. A large green dumpster is on the left side, while a wrapped pallet leans against a wall on the right. The setting is quiet and industrial, framed by lush green hedges and tall trees in the background. A white wire cuts across the image diagonally.",
+    "category": "Cats",
+    "image": "/images/photos/DSC_0671__GRADED.jpg",
+    "thumbnail": "/images/photos/DSC_0671__GRADED.jpg",
+    "date": "2025-07-13"
+  },
+  {
+    "id": 2,
+    "title": "Hedge Path Watcher",
+    "description": "A fluffy gray-and-white cat lies relaxed on a shadowy concrete area, backed by green bushes. The lighting gives the scene a peaceful atmosphere.",
+    "category": "Cats",
+    "image": "/images/photos/DSC_0672__GRADED.jpg",
+    "thumbnail": "/images/photos/DSC_0672__GRADED.jpg",
+    "date": "2025-07-13"
+  },
+  {
+    "id": 3,
+    "title": "Curious by the Bins",
+    "description": "The same two tortoiseshell cats are seen walking down a narrow, shaded path toward a sunlit stack of pallets and paint buckets.",
+    "category": "Cats",
+    "image": "/images/photos/DSC_0673__GRADED.jpg",
+    "thumbnail": "/images/photos/DSC_0673__GRADED.jpg",
+    "date": "2025-07-13"
+  },
+  {
+    "id": 4,
+    "title": "Sunlit Pause",
+    "description": "A wider view of the same alleyway shows two tortoiseshell cats standing alert at the entrance, with greenery and the building surrounding them.",
+    "category": "Cats",
+    "image": "/images/photos/DSC_0675__GRADED.jpg",
+    "thumbnail": "/images/photos/DSC_0675__GRADED.jpg",
+    "date": "2025-07-13"
+  },
+  {
+    "id": 5,
+    "title": "Into the Light",
+    "description": "Three tortoiseshell cats (two in front, one deeper in the alley) stand near a blue fabric wall and a tree. The lighting is dim and moody.",
+    "category": "Cats",
+    "image": "/images/photos/DSC_0676__GRADED.jpg",
+    "thumbnail": "/images/photos/DSC_0676__GRADED.jpg",
+    "date": "2025-07-13"
+  },
+  {
+    "id": 6,
+    "title": "Frozen in the Spotlight",
+    "description": "Two dark tortoiseshell cats face each other on a concrete sidewalk in front of a brown door and fabric partition.",
+    "category": "Cats",
+    "image": "/images/photos/DSC_0677__GRADED.jpg",
+    "thumbnail": "/images/photos/DSC_0677__GRADED.jpg",
+    "date": "2025-07-13"
+  },
+  {
+    "id": 7,
+    "title": "Street Encounter",
+    "description": "The ginger cat is now standing more prominently in the sunlight with strong shadows, in front of the same BMW and under a tree.",
+    "category": "Cats",
+    "image": "/images/photos/DSC_0678__GRADED.jpg",
+    "thumbnail": "/images/photos/DSC_0678__GRADED.jpg",
+    "date": "2025-07-13"
+  },
+  {
+    "id": 8,
+    "title": "Out from the Shadows",
+    "description": "The ginger cat walks toward a sunlit area from a shaded corner near the bins. A black car (BMW) is seen in the background.",
+    "category": "Cats",
+    "image": "/images/photos/DSC_0679__GRADED.jpg",
+    "thumbnail": "/images/photos/DSC_0679__GRADED.jpg",
+    "date": "2025-07-13"
+  },
+  {
+    "id": 9,
+    "title": "Alley Watch",
+    "description": "The same ginger cat sits calmly in bright sunlight near a red fire extinguisher. There's a visible trash bin on the side and a white building wall.",
+    "category": "Cats",
+    "image": "/images/photos/DSC_0680__GRADED.jpg",
+    "thumbnail": "/images/photos/DSC_0680__GRADED.jpg",
+    "date": "2025-07-13"
+  },
+  {
+    "id": 10,
+    "title": "Secret Passage",
+    "description": "A ginger cat stands next to two recycling bins (labeled 'EVSEL ATIK' and 'KÂĞIT PLASTIK METAL ATIK') in front of a wooden building, partly in shadow.",
+    "category": "Cats",
+    "image": "/images/photos/DSC_0682__GRADED.jpg",
+    "thumbnail": "/images/photos/DSC_0682__GRADED.jpg",
+    "date": "2025-07-13"
+  },
+  {
+    "id": 11,
+    "title": "Shadow Nap",
+    "description": "A ginger-and-white cat stands on a dirt path between tall hedges, bathed in a soft patch of light.",
+    "category": "Cats",
+    "image": "/images/photos/DSC_0683__GRADED.jpg",
+    "thumbnail": "/images/photos/DSC_0683__GRADED.jpg",
+    "date": "2025-07-13"
+  }
+]

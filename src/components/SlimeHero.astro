@@ -1,0 +1,38 @@
+---
+// No props needed for now
+---
+<div class="slime-hero-container">
+  <canvas id="slime-bg"></canvas>
+  <div class="hero-content">
+    <h1>Remzi Kaygusuz</h1>
+    <p>Creative Developer & Visual Storyteller</p>
+  </div>
+</div>
+<script type="module" src="/src/scripts/slime-hero.js"></script>
+<style>
+.slime-hero-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+#slime-bg {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  z-index: 0;
+}
+.hero-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  color: white;
+  text-shadow: 0 2px 16px rgba(0,0,0,0.3);
+}
+</style> 
